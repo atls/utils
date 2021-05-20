@@ -209,7 +209,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/stack-trace@workspace:packages/stack-trace"
   dependencies:
-    "@atls/webpack-source-map": "workspace:0.0.0"
+    "@atls/webpack-source-map": "workspace:0.0.1"
     "@types/node": ^14.14.41
     "@types/repeat-string": ^1.6.0
     "@types/stack-utils": ^2.0.0
@@ -220,7 +220,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@atls/webpack-source-map@workspace:0.0.0, @atls/webpack-source-map@workspace:packages/webpack-source-map":
+"@atls/webpack-source-map@workspace:0.0.1, @atls/webpack-source-map@workspace:packages/webpack-source-map":
   version: 0.0.0-use.local
   resolution: "@atls/webpack-source-map@workspace:packages/webpack-source-map"
   dependencies:

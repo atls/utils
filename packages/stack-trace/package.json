@@ -1,6 +1,6 @@
 {
   "name": "@atls/stack-trace",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "files": [
@@ -12,7 +12,7 @@
     "prepack": "yarn run build"
   },
   "dependencies": {
-    "@atls/webpack-source-map": "workspace:0.0.0",
+    "@atls/webpack-source-map": "workspace:0.0.1",
     "stack-utils": "^2.0.3"
   },
   "devDependencies": {
