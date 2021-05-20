@@ -1,0 +1,32 @@
+{
+  "name": "@atls/stack-trace",
+  "repository": "git@github.com:atls/tools.git",
+  "version": "0.0.0",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn app library build",
+    "postpack": "rm -rf dist",
+    "prepack": "yarn run build"
+  },
+  "dependencies": {
+    "@atls/webpack-source-map": "workspace:0.0.0",
+    "stack-utils": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.41",
+    "@types/repeat-string": "^1.6.0",
+    "@types/stack-utils": "^2.0.0",
+    "repeat-string": "^1.6.1",
+    "ts-loader": "^8.1.0",
+    "webpack": "^5.33.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  }
+}
