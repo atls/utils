@@ -37,8 +37,7 @@ describe('webpack stack trace', () => {
   it('simple', () => {
     const entryPath = path.join(__dirname, 'fixtures', 'dist', 'simple.js')
 
-    // eslint-disable-next-line import/no-dynamic-require
-    const { Target } = require(entryPath) // eslint-disable-line global-require
+    const { Target } = require(entryPath)
 
     const stackTrace = Target.parseErrorStack()
 

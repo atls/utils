@@ -6,7 +6,7 @@ export const load = (file, target: string = __filename) => {
     const sourceUrl = file.replace(/\$/g, '\\$')
 
     return execSync(`grep -r "sourceURL=${sourceUrl}" ${target}`).toString()
-  } catch (error) {
+  } catch (error: any) {
     process.emitWarning(`Loading webpack source error: ${error.message}`)
 
     return null
@@ -15,6 +15,7 @@ export const load = (file, target: string = __filename) => {
 
 export const parse = (source) => {
   try {
+    // eslint-disable-next-line prefer-regex-literals
     const dataUriRegExp = new RegExp('(?<=base64,)(.*?)(?=\\\\n)')
 
     const [datauri] = source.match(dataUriRegExp) || []
@@ -22,7 +23,7 @@ export const parse = (source) => {
     if (datauri) {
       return JSON.parse(Buffer.from(datauri, 'base64').toString())
     }
-  } catch (error) {
+  } catch (error: any) {
     process.emitWarning(`Parse webpack source error: ${error.message}`)
   }
 
