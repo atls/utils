@@ -5088,10 +5088,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["loader-utils", [\
-        ["npm:2.0.0", {\
-          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.0-cf7d5aadbf-6856423131.zip/node_modules/loader-utils/",\
+        ["npm:2.0.3", {\
+          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.3-4d761d6a51-d055c61ce5.zip/node_modules/loader-utils/",\
           "packageDependencies": [\
-            ["loader-utils", "npm:2.0.0"],\
+            ["loader-utils", "npm:2.0.3"],\
             ["big.js", "npm:5.2.2"],\
             ["emojis-list", "npm:3.0.0"],\
             ["json5", "npm:2.2.0"]\
@@ -6731,7 +6731,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", null],\
             ["chalk", "npm:4.1.1"],\
             ["enhanced-resolve", "npm:4.5.0"],\
-            ["loader-utils", "npm:2.0.0"],\
+            ["loader-utils", "npm:2.0.3"],\
             ["micromatch", "npm:4.0.4"],\
             ["semver", "npm:7.3.5"],\
             ["typescript", null],\
