@@ -1,5 +1,5 @@
-import { StackLineData } from 'stack-utils'
 import { SourceMap }     from 'module'
+import { StackLineData } from 'stack-utils'
 
 export interface StackFrame extends StackLineData {
   line?: number
