@@ -13,15 +13,15 @@
   },
   "dependencies": {
     "@atls/webpack-source-map": "workspace:0.0.2",
-    "stack-utils": "^2.0.5"
+    "stack-utils": "2.0.6"
   },
   "devDependencies": {
-    "@types/node": "^17.0.12",
-    "@types/repeat-string": "^1.6.3",
-    "@types/stack-utils": "^2.0.1",
-    "repeat-string": "^1.6.1",
-    "ts-loader": "^8.1.0",
-    "webpack": "^5.67.0"
+    "@types/node": "20.6.3",
+    "@types/repeat-string": "1.6.3",
+    "@types/stack-utils": "2.0.1",
+    "repeat-string": "1.6.1",
+    "ts-loader": "9.4.4",
+    "webpack": "5.78.0"
   },
   "publishConfig": {
     "access": "public",
