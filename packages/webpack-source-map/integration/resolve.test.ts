@@ -1,6 +1,6 @@
+import { SourceMap } from 'module'
 import path          from 'path'
 import webpack       from 'webpack'
-import { SourceMap } from 'module'
 
 import { resolve }   from '../src'
 
