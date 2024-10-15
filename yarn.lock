@@ -112,7 +112,7 @@ __metadata:
     "@jest/globals": "npm:29.7.0"
     "@types/node": "npm:22.7.5"
     "@types/repeat-string": "npm:1.6.5"
-    "@types/stack-utils": "npm:2.0.1"
+    "@types/stack-utils": "npm:2.0.3"
     repeat-string: "npm:1.6.1"
     stack-utils: "npm:2.0.6"
     ts-loader: "npm:9.4.4"
@@ -1432,7 +1432,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/stack-utils@npm:2.0.1, @types/stack-utils@npm:^2.0.0":
+"@types/stack-utils@npm:2.0.3":
+  version: 2.0.3
+  resolution: "@types/stack-utils@npm:2.0.3"
+  checksum: 10/72576cc1522090fe497337c2b99d9838e320659ac57fa5560fcbdcbafcf5d0216c6b3a0a8a4ee4fdb3b1f5e3420aa4f6223ab57b82fef3578bec3206425c6cf5
+  languageName: node
+  linkType: hard
+
+"@types/stack-utils@npm:^2.0.0":
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 10/205fdbe3326b7046d7eaf5e494d8084f2659086a266f3f9cf00bccc549c8e36e407f88168ad4383c8b07099957ad669f75f2532ed4bc70be2b037330f7bae019

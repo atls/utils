@@ -182,7 +182,7 @@ const RAW_RUNTIME_STATE =
           ["@jest/globals", "npm:29.7.0"],\
           ["@types/node", "npm:22.7.5"],\
           ["@types/repeat-string", "npm:1.6.5"],\
-          ["@types/stack-utils", "npm:2.0.1"],\
+          ["@types/stack-utils", "npm:2.0.3"],\
           ["repeat-string", "npm:1.6.1"],\
           ["stack-utils", "npm:2.0.6"],\
           ["ts-loader", "virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.4.4"],\
@@ -2145,6 +2145,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/@types-stack-utils-npm-2.0.1-867718ab70-10.zip/node_modules/@types/stack-utils/",\
         "packageDependencies": [\
           ["@types/stack-utils", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.0.3", {\
+        "packageLocation": "../.yarn/berry/cache/@types-stack-utils-npm-2.0.3-48a0a03262-10.zip/node_modules/@types/stack-utils/",\
+        "packageDependencies": [\
+          ["@types/stack-utils", "npm:2.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\

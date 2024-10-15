@@ -20,7 +20,7 @@
     "@jest/globals": "29.7.0",
     "@types/node": "22.7.5",
     "@types/repeat-string": "1.6.5",
-    "@types/stack-utils": "2.0.1",
+    "@types/stack-utils": "2.0.3",
     "repeat-string": "1.6.1",
     "ts-loader": "9.4.4",
     "webpack": "5.78.0"
