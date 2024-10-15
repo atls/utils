@@ -23,7 +23,7 @@
     "@types/stack-utils": "2.0.3",
     "repeat-string": "1.6.1",
     "ts-loader": "9.5.1",
-    "webpack": "5.78.0"
+    "webpack": "5.95.0"
   },
   "publishConfig": {
     "access": "public",
