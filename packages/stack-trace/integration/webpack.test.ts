@@ -1,5 +1,9 @@
-import path    from 'path'
-import webpack from 'webpack'
+import { describe }  from '@jest/globals'
+import { beforeAll } from '@jest/globals'
+import { it }        from '@jest/globals'
+import { expect }    from '@jest/globals'
+import path          from 'path'
+import webpack       from 'webpack'
 
 describe('webpack stack trace', () => {
   beforeAll(async () => {
@@ -37,8 +41,10 @@ describe('webpack stack trace', () => {
   it('simple', () => {
     const entryPath = path.join(__dirname, 'fixtures', 'dist', 'simple.js')
 
+    // eslint-disable-next-line security/detect-non-literal-require, @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     const { Target } = require(entryPath)
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const stackTrace = Target.parseErrorStack()
 
     const [repeatStringFrame, simpleFrame] = stackTrace.frames

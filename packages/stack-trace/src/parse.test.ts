@@ -1,12 +1,15 @@
-import { StackFrame } from './stack-trace'
-import { parse }      from './parse'
+import { describe } from '@jest/globals'
+import { it }       from '@jest/globals'
+import { expect }   from '@jest/globals'
+
+import { parse }    from './parse.js'
 
 describe('parse stack trace', () => {
   it('simple', () => {
-    const stackTrace = parse(new Error('simple').stack as string)
-    const topFrame = stackTrace.topFrame as StackFrame
+    const stackTrace = parse(new Error('simple').stack!)
+    const topFrame = stackTrace.topFrame!
 
     expect(topFrame).toBeDefined()
-    expect(__filename).toEqual(expect.stringContaining(topFrame.file as string))
+    expect(__filename).toEqual(expect.stringContaining(topFrame.file!))
   })
 })
