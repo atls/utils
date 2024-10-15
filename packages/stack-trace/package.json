@@ -13,7 +13,7 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@atls/webpack-source-map": "workspace:0.0.2",
+    "@atls/webpack-source-map": "workspace:*",
     "stack-utils": "2.0.6"
   },
   "devDependencies": {
