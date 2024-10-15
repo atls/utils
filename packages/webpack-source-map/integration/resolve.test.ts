@@ -7,7 +7,7 @@ import { expect }         from '@jest/globals'
 import path               from 'path'
 import webpack            from 'webpack'
 
-import { resolve }        from '../src'
+import { resolve }        from '../src/index.js'
 
 describe('resolve webpack source map', () => {
   beforeAll(async () => {
