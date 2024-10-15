@@ -179,6 +179,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/stack-trace", "workspace:packages/stack-trace"],\
           ["@atls/webpack-source-map", "workspace:packages/webpack-source-map"],\
+          ["@jest/globals", "npm:29.7.0"],\
           ["@types/node", "npm:20.6.3"],\
           ["@types/repeat-string", "npm:1.6.3"],\
           ["@types/stack-utils", "npm:2.0.1"],\
@@ -195,6 +196,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./packages/webpack-source-map/",\
         "packageDependencies": [\
           ["@atls/webpack-source-map", "workspace:packages/webpack-source-map"],\
+          ["@jest/globals", "npm:29.7.0"],\
           ["@types/node", "npm:20.6.3"],\
           ["webpack", "virtual:0c05b0a53a9a13ab68e42ae8b3af10bbd21a285290b480c6fecff34180a2d5459a43750c5592cb218249e62f97d469802fcf76603617afb30e61af41f65d3a60#npm:5.78.0"]\
         ],\

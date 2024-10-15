@@ -16,6 +16,7 @@
     "stack-utils": "2.0.6"
   },
   "devDependencies": {
+    "@jest/globals": "29.7.0",
     "@types/node": "20.6.3",
     "@types/repeat-string": "1.6.3",
     "@types/stack-utils": "2.0.1",

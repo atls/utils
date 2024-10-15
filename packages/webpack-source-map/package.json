@@ -12,6 +12,7 @@
     "postpack": "rm -rf dist"
   },
   "devDependencies": {
+    "@jest/globals": "29.7.0",
     "@types/node": "20.6.3",
     "webpack": "5.78.0"
   },
