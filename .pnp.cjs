@@ -185,7 +185,7 @@ const RAW_RUNTIME_STATE =
           ["@types/stack-utils", "npm:2.0.3"],\
           ["repeat-string", "npm:1.6.1"],\
           ["stack-utils", "npm:2.0.6"],\
-          ["ts-loader", "virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.4.4"],\
+          ["ts-loader", "virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.5.1"],\
           ["webpack", "virtual:0c05b0a53a9a13ab68e42ae8b3af10bbd21a285290b480c6fecff34180a2d5459a43750c5592cb218249e62f97d469802fcf76603617afb30e61af41f65d3a60#npm:5.78.0"]\
         ],\
         "linkType": "SOFT"\
@@ -8201,13 +8201,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ts-loader", [\
-      ["npm:9.4.4", {\
-        "packageLocation": "../.yarn/berry/cache/ts-loader-npm-9.4.4-f7a7993559-10.zip/node_modules/ts-loader/",\
-        "packageDependencies": [\
-          ["ts-loader", "npm:9.4.4"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
       ["npm:9.5.1", {\
         "packageLocation": "../.yarn/berry/cache/ts-loader-npm-9.5.1-c8a0456e30-10.zip/node_modules/ts-loader/",\
         "packageDependencies": [\
@@ -8237,16 +8230,17 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.4.4", {\
-        "packageLocation": "./.yarn/__virtual__/ts-loader-virtual-83be1fafac/2/.yarn/berry/cache/ts-loader-npm-9.4.4-f7a7993559-10.zip/node_modules/ts-loader/",\
+      ["virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.5.1", {\
+        "packageLocation": "./.yarn/__virtual__/ts-loader-virtual-42e32e7dc3/2/.yarn/berry/cache/ts-loader-npm-9.5.1-c8a0456e30-10.zip/node_modules/ts-loader/",\
         "packageDependencies": [\
-          ["ts-loader", "virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.4.4"],\
+          ["ts-loader", "virtual:b55ccfd77e113d95c47b586305e8a02a560e089a044afab76896ff8021a6e090833bc22c42aa591ecd90cd8894fa0ac2695f1ef0049be59109812ccad3120468#npm:9.5.1"],\
           ["@types/typescript", null],\
           ["@types/webpack", null],\
           ["chalk", "npm:4.1.1"],\
           ["enhanced-resolve", "npm:5.17.1"],\
           ["micromatch", "npm:4.0.4"],\
           ["semver", "npm:7.6.3"],\
+          ["source-map", "npm:0.7.4"],\
           ["typescript", null],\
           ["webpack", "virtual:0c05b0a53a9a13ab68e42ae8b3af10bbd21a285290b480c6fecff34180a2d5459a43750c5592cb218249e62f97d469802fcf76603617afb30e61af41f65d3a60#npm:5.78.0"]\
         ],\

@@ -22,7 +22,7 @@
     "@types/repeat-string": "1.6.5",
     "@types/stack-utils": "2.0.3",
     "repeat-string": "1.6.1",
-    "ts-loader": "9.4.4",
+    "ts-loader": "9.5.1",
     "webpack": "5.78.0"
   },
   "publishConfig": {

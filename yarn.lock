@@ -115,7 +115,7 @@ __metadata:
     "@types/stack-utils": "npm:2.0.3"
     repeat-string: "npm:1.6.1"
     stack-utils: "npm:2.0.6"
-    ts-loader: "npm:9.4.4"
+    ts-loader: "npm:9.5.1"
     webpack: "npm:5.78.0"
   languageName: unknown
   linkType: soft
@@ -6532,21 +6532,6 @@ __metadata:
   dependencies:
     jest-resolve: "npm:^29.5.0"
   checksum: 10/0845b9ab6a7d5c7b872e7573550607e9da1a2281c4db7a9d900c52b518bf5237ca265d56356b2ebb6d5aad705613e55e406c0eb66cad60ab2a303d17e6b0844e
-  languageName: node
-  linkType: hard
-
-"ts-loader@npm:9.4.4":
-  version: 9.4.4
-  resolution: "ts-loader@npm:9.4.4"
-  dependencies:
-    chalk: "npm:^4.1.0"
-    enhanced-resolve: "npm:^5.0.0"
-    micromatch: "npm:^4.0.0"
-    semver: "npm:^7.3.4"
-  peerDependencies:
-    typescript: "*"
-    webpack: ^5.0.0
-  checksum: 10/52302f3540962d779fc346281d8d4f7310f73e129debc4fb55c1fb3f097519009b32f7e2806299904e98961c785784fccb70ceca9076c4bae33f064ad11dd982
   languageName: node
   linkType: hard
 
