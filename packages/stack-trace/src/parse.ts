@@ -1,12 +1,12 @@
-import type { StackFrame } from './stack-trace'
+import type { StackFrame } from './stack-trace.js'
 
 import StackUtils          from 'stack-utils'
 
 import { resolve }         from '@atls/webpack-source-map'
 
-import { StackTrace }      from './stack-trace'
-import { isWebpackEnv }    from './constants'
-import { isProdEnv }       from './constants'
+import { StackTrace }      from './stack-trace.js'
+import { isWebpackEnv }    from './constants.js'
+import { isProdEnv }       from './constants.js'
 
 export const parse = (stack: string): StackTrace => {
   const lines = stack.split('\n')
