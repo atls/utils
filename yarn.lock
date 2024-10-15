@@ -111,7 +111,7 @@ __metadata:
     "@atls/webpack-source-map": "workspace:*"
     "@jest/globals": "npm:29.7.0"
     "@types/node": "npm:22.7.5"
-    "@types/repeat-string": "npm:1.6.3"
+    "@types/repeat-string": "npm:1.6.5"
     "@types/stack-utils": "npm:2.0.1"
     repeat-string: "npm:1.6.1"
     stack-utils: "npm:2.0.6"
@@ -1418,10 +1418,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/repeat-string@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@types/repeat-string@npm:1.6.3"
-  checksum: 10/91f1ae3a8235eb45828a6be7777f323eec077842f2692403f48391dd1714fbdad78e82d5c048662b55d6bc67002ea94f893701ac5c1920c4e937d0e94a28b350
+"@types/repeat-string@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@types/repeat-string@npm:1.6.5"
+  checksum: 10/bb8e4065fea1239e12eb383cf1b8a552e6e8b465ece1d82cc9950a2894a8bfa9b2d852612e5c0f2af27cae06f25d507f60d5297483a8b5049aeace496693c860
   languageName: node
   linkType: hard
 

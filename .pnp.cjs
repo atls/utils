@@ -181,7 +181,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/webpack-source-map", "workspace:packages/webpack-source-map"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@types/node", "npm:22.7.5"],\
-          ["@types/repeat-string", "npm:1.6.3"],\
+          ["@types/repeat-string", "npm:1.6.5"],\
           ["@types/stack-utils", "npm:2.0.1"],\
           ["repeat-string", "npm:1.6.1"],\
           ["stack-utils", "npm:2.0.6"],\
@@ -2123,10 +2123,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/repeat-string", [\
-      ["npm:1.6.3", {\
-        "packageLocation": "../.yarn/berry/cache/@types-repeat-string-npm-1.6.3-fe2fc49b2d-10.zip/node_modules/@types/repeat-string/",\
+      ["npm:1.6.5", {\
+        "packageLocation": "../.yarn/berry/cache/@types-repeat-string-npm-1.6.5-5af25adaf3-10.zip/node_modules/@types/repeat-string/",\
         "packageDependencies": [\
-          ["@types/repeat-string", "npm:1.6.3"]\
+          ["@types/repeat-string", "npm:1.6.5"]\
         ],\
         "linkType": "HARD"\
       }]\
