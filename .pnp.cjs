@@ -180,7 +180,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/stack-trace", "workspace:packages/stack-trace"],\
           ["@atls/webpack-source-map", "workspace:packages/webpack-source-map"],\
           ["@jest/globals", "npm:29.7.0"],\
-          ["@types/node", "npm:20.6.3"],\
+          ["@types/node", "npm:22.7.5"],\
           ["@types/repeat-string", "npm:1.6.3"],\
           ["@types/stack-utils", "npm:2.0.1"],\
           ["repeat-string", "npm:1.6.1"],\
@@ -2109,6 +2109,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/@types-node-npm-22.5.4-50cd3ae186-10.zip/node_modules/@types/node/",\
         "packageDependencies": [\
           ["@types/node", "npm:22.5.4"],\
+          ["undici-types", "npm:6.19.8"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:22.7.5", {\
+        "packageLocation": "../.yarn/berry/cache/@types-node-npm-22.7.5-0428b60a8c-10.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:22.7.5"],\
           ["undici-types", "npm:6.19.8"]\
         ],\
         "linkType": "HARD"\
