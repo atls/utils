@@ -1,2 +1,2 @@
-export * from './stack-trace.js'
-export * from './parse.js'
+export * from './stack-trace'
+export * from './parse'
