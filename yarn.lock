@@ -108,21 +108,23 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/stack-trace@workspace:packages/stack-trace"
   dependencies:
-    "@atls/webpack-source-map": "workspace:0.0.2"
-    "@types/node": "npm:20.6.3"
-    "@types/repeat-string": "npm:1.6.3"
-    "@types/stack-utils": "npm:2.0.1"
+    "@atls/webpack-source-map": "workspace:*"
+    "@jest/globals": "npm:29.7.0"
+    "@types/node": "npm:22.7.5"
+    "@types/repeat-string": "npm:1.6.5"
+    "@types/stack-utils": "npm:2.0.3"
     repeat-string: "npm:1.6.1"
     stack-utils: "npm:2.0.6"
-    ts-loader: "npm:9.4.4"
-    webpack: "npm:5.78.0"
+    ts-loader: "npm:9.5.1"
+    webpack: "npm:5.95.0"
   languageName: unknown
   linkType: soft
 
-"@atls/webpack-source-map@workspace:0.0.2, @atls/webpack-source-map@workspace:packages/webpack-source-map":
+"@atls/webpack-source-map@workspace:*, @atls/webpack-source-map@workspace:packages/webpack-source-map":
   version: 0.0.0-use.local
   resolution: "@atls/webpack-source-map@workspace:packages/webpack-source-map"
   dependencies:
+    "@jest/globals": "npm:29.7.0"
     "@types/node": "npm:20.6.3"
     webpack: "npm:5.78.0"
   languageName: unknown
@@ -729,7 +731,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/globals@npm:^29.7.0":
+"@jest/globals@npm:29.7.0, @jest/globals@npm:^29.7.0":
   version: 29.7.0
   resolution: "@jest/globals@npm:29.7.0"
   dependencies:
@@ -1407,10 +1409,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/repeat-string@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@types/repeat-string@npm:1.6.3"
-  checksum: 10/91f1ae3a8235eb45828a6be7777f323eec077842f2692403f48391dd1714fbdad78e82d5c048662b55d6bc67002ea94f893701ac5c1920c4e937d0e94a28b350
+"@types/node@npm:22.7.5":
+  version: 22.7.5
+  resolution: "@types/node@npm:22.7.5"
+  dependencies:
+    undici-types: "npm:~6.19.2"
+  checksum: 10/e8ba102f8c1aa7623787d625389be68d64e54fcbb76d41f6c2c64e8cf4c9f4a2370e7ef5e5f1732f3c57529d3d26afdcb2edc0101c5e413a79081449825c57ac
+  languageName: node
+  linkType: hard
+
+"@types/repeat-string@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@types/repeat-string@npm:1.6.5"
+  checksum: 10/bb8e4065fea1239e12eb383cf1b8a552e6e8b465ece1d82cc9950a2894a8bfa9b2d852612e5c0f2af27cae06f25d507f60d5297483a8b5049aeace496693c860
   languageName: node
   linkType: hard
 
@@ -1421,7 +1432,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/stack-utils@npm:2.0.1, @types/stack-utils@npm:^2.0.0":
+"@types/stack-utils@npm:2.0.3":
+  version: 2.0.3
+  resolution: "@types/stack-utils@npm:2.0.3"
+  checksum: 10/72576cc1522090fe497337c2b99d9838e320659ac57fa5560fcbdcbafcf5d0216c6b3a0a8a4ee4fdb3b1f5e3420aa4f6223ab57b82fef3578bec3206425c6cf5
+  languageName: node
+  linkType: hard
+
+"@types/stack-utils@npm:^2.0.0":
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 10/205fdbe3326b7046d7eaf5e494d8084f2659086a266f3f9cf00bccc549c8e36e407f88168ad4383c8b07099957ad669f75f2532ed4bc70be2b037330f7bae019
@@ -2861,7 +2879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.10.0, enhanced-resolve@npm:^5.17.0":
+"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.10.0, enhanced-resolve@npm:^5.17.0, enhanced-resolve@npm:^5.17.1":
   version: 5.17.1
   resolution: "enhanced-resolve@npm:5.17.1"
   dependencies:
@@ -6517,21 +6535,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:9.4.4":
-  version: 9.4.4
-  resolution: "ts-loader@npm:9.4.4"
-  dependencies:
-    chalk: "npm:^4.1.0"
-    enhanced-resolve: "npm:^5.0.0"
-    micromatch: "npm:^4.0.0"
-    semver: "npm:^7.3.4"
-  peerDependencies:
-    typescript: "*"
-    webpack: ^5.0.0
-  checksum: 10/52302f3540962d779fc346281d8d4f7310f73e129debc4fb55c1fb3f097519009b32f7e2806299904e98961c785784fccb70ceca9076c4bae33f064ad11dd982
-  languageName: node
-  linkType: hard
-
 "ts-loader@npm:9.5.1":
   version: 9.5.1
   resolution: "ts-loader@npm:9.5.1"
@@ -6872,6 +6875,42 @@ __metadata:
   bin:
     webpack: bin/webpack.js
   checksum: 10/a48bef7a511d826db7f9ebee2c84317214923ac40cb2aabe6a649546c54a76a55fc3b91ff03c05fed22a13a176891c47bbff7fcc644c53bcbe5091555863641b
+  languageName: node
+  linkType: hard
+
+"webpack@npm:5.95.0":
+  version: 5.95.0
+  resolution: "webpack@npm:5.95.0"
+  dependencies:
+    "@types/estree": "npm:^1.0.5"
+    "@webassemblyjs/ast": "npm:^1.12.1"
+    "@webassemblyjs/wasm-edit": "npm:^1.12.1"
+    "@webassemblyjs/wasm-parser": "npm:^1.12.1"
+    acorn: "npm:^8.7.1"
+    acorn-import-attributes: "npm:^1.9.5"
+    browserslist: "npm:^4.21.10"
+    chrome-trace-event: "npm:^1.0.2"
+    enhanced-resolve: "npm:^5.17.1"
+    es-module-lexer: "npm:^1.2.1"
+    eslint-scope: "npm:5.1.1"
+    events: "npm:^3.2.0"
+    glob-to-regexp: "npm:^0.4.1"
+    graceful-fs: "npm:^4.2.11"
+    json-parse-even-better-errors: "npm:^2.3.1"
+    loader-runner: "npm:^4.2.0"
+    mime-types: "npm:^2.1.27"
+    neo-async: "npm:^2.6.2"
+    schema-utils: "npm:^3.2.0"
+    tapable: "npm:^2.1.1"
+    terser-webpack-plugin: "npm:^5.3.10"
+    watchpack: "npm:^2.4.1"
+    webpack-sources: "npm:^3.2.3"
+  peerDependenciesMeta:
+    webpack-cli:
+      optional: true
+  bin:
+    webpack: bin/webpack.js
+  checksum: 10/0377ad3a550b041f26237c96fb55754625b0ce6bae83c1c2447e3262ad056b0b0ad770dcbb92b59f188e9a2bd56155ce910add17dcf023cfbe78bdec774380c1
   languageName: node
   linkType: hard
 

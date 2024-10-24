@@ -1,8 +1,10 @@
 {
   "name": "@atls/stack-trace",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "BSD-3-Clause",
+  "type": "module",
   "main": "src/index.ts",
+  "exports": "./src/index.ts",
   "files": [
     "dist"
   ],
@@ -12,20 +14,22 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@atls/webpack-source-map": "workspace:0.0.2",
+    "@atls/webpack-source-map": "workspace:*",
     "stack-utils": "2.0.6"
   },
   "devDependencies": {
-    "@types/node": "20.6.3",
-    "@types/repeat-string": "1.6.3",
-    "@types/stack-utils": "2.0.1",
+    "@jest/globals": "29.7.0",
+    "@types/node": "22.7.5",
+    "@types/repeat-string": "1.6.5",
+    "@types/stack-utils": "2.0.3",
     "repeat-string": "1.6.1",
-    "ts-loader": "9.4.4",
-    "webpack": "5.78.0"
+    "ts-loader": "9.5.1",
+    "webpack": "5.95.0"
   },
   "publishConfig": {
     "access": "public",
     "main": "dist/index.js",
+    "exports": "./dist/index.js",
     "typings": "dist/index.d.ts"
   }
 }

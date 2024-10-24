@@ -1,11 +1,12 @@
-import StackUtils       from 'stack-utils'
+import type { StackFrame } from './stack-trace.js'
 
-import { resolve }      from '@atls/webpack-source-map'
+import StackUtils          from 'stack-utils'
 
-import { StackTrace }   from './stack-trace'
-import { StackFrame }   from './stack-trace'
-import { isWebpackEnv } from './constants'
-import { isProdEnv }    from './constants'
+import { resolve }         from '@atls/webpack-source-map'
+
+import { StackTrace }      from './stack-trace.js'
+import { isWebpackEnv }    from './constants.js'
+import { isProdEnv }       from './constants.js'
 
 export const parse = (stack: string): StackTrace => {
   const lines = stack.split('\n')
@@ -13,7 +14,7 @@ export const parse = (stack: string): StackTrace => {
   const cwd = process.cwd()
   const stackUtils = new StackUtils({ cwd })
 
-  const frames = lines.reduce((result: StackFrame[], line) => {
+  const frames = lines.reduce((result: Array<StackFrame>, line) => {
     const frame: StackFrame | null = stackUtils.parseLine(line.trim())
 
     if (frame) {
