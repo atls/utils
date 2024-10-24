@@ -16,7 +16,12 @@ describe('webpack stack trace', () => {
         simple: path.join(__dirname, 'fixtures', 'simple.js'),
       },
       output: {
-        libraryTarget: 'commonjs',
+        library: {
+          type: 'module'
+        },
+        chunkFormat: 'module',
+        filename: 'simple.js',
+        libraryTarget: 'module',
         path: path.join(__dirname, 'fixtures', 'dist'),
       },
       resolve: {
@@ -25,6 +30,9 @@ describe('webpack stack trace', () => {
       module: {
         rules: [{ test: /\.ts?$/, loader: 'ts-loader' }],
       },
+      experiments: {
+        outputModule: true
+      }
     })
 
     await new Promise((resolve, reject) => {
