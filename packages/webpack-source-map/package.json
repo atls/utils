@@ -1,8 +1,9 @@
 {
   "name": "@atls/webpack-source-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -12,6 +13,7 @@
     "postpack": "rm -rf dist"
   },
   "devDependencies": {
+    "@jest/globals": "29.7.0",
     "@types/node": "20.6.3",
     "webpack": "5.78.0"
   },
