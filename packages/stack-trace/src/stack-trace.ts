@@ -1,5 +1,5 @@
-import { SourceMap }     from 'module'
-import { StackLineData } from 'stack-utils'
+import type { SourceMap }     from 'module'
+import type { StackLineData } from 'stack-utils'
 
 export interface StackFrame extends StackLineData {
   line?: number
@@ -17,9 +17,9 @@ export interface StackFrame extends StackLineData {
 }
 
 export class StackTrace {
-  constructor(public readonly frames: StackFrame[]) {}
+  constructor(public readonly frames: Array<StackFrame>) {}
 
-  get topFrame() {
+  get topFrame(): StackFrame | undefined {
     return this.frames.find((entry) => entry.file)
   }
 }
