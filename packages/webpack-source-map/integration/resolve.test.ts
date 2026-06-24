@@ -1,8 +1,13 @@
-import { SourceMap } from 'module'
-import path          from 'path'
-import webpack       from 'webpack'
+import type { SourceMap } from 'module'
 
-import { resolve }   from '../src'
+import { describe }       from '@jest/globals'
+import { beforeAll }      from '@jest/globals'
+import { it }             from '@jest/globals'
+import { expect }         from '@jest/globals'
+import path               from 'path'
+import webpack            from 'webpack'
+
+import { resolve }        from '../src/index.js'
 
 describe('resolve webpack source map', () => {
   beforeAll(async () => {
@@ -20,19 +25,19 @@ describe('resolve webpack source map', () => {
       },
     })
 
-    // eslint-disable-next-line no-shadow
-    await new Promise((resolve, reject) => {
+    await new Promise((res, rej) => {
       compiler.run((error) => {
         if (error && !error.message) {
-          reject(error)
+          rej(error)
         } else {
-          resolve(null)
+          res(null)
         }
       })
     })
   })
 
   it('simple', () => {
+    // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
     const sourceMap = resolve(
       'webpack-internal:///./fixtures/simple.js',
       path.join(__dirname, 'fixtures', 'dist', 'simple.js')
