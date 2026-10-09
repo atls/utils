@@ -1,6 +1,6 @@
-const repeat = require('repeat-string')
+import repeat from 'repeat-string'
 
-const { parse } = require('../../src')
+import { parse } from '../../src/index.js'
 
 export class Target {
   static parseErrorStack() {

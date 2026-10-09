@@ -6,10 +6,19 @@
   "workspaces": [
     "packages/**/*"
   ],
-  "devDependencies": {
-    "@atls/code-runtime": "1.1.0",
-    "@types/node": "22.5.4",
-    "typescript": "5.4.2"
+  "lint-staged": {
+    "*.{yml,yaml,json,md}": "yarn format",
+    "packages/**/*.{js,mjs,cjs,jsx,ts,tsx}": [
+      "yarn format",
+      "yarn lint"
+    ],
+    "packages/**/src/**/*.{test,spec}.{ts,tsx}": "yarn test unit",
+    "packages/**/integration/**/*.{test,spec}.{ts,tsx}": "yarn test integration"
   },
-  "packageManager": "yarn@4.0.0"
+  "devDependencies": {
+    "@atls/raijin": "latest",
+    "@types/node": "24.13.6",
+    "typescript": "5.9.3"
+  },
+  "packageManager": "yarn@4.18.0"
 }

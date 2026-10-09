@@ -1,48 +1,54 @@
-import { SourceMap } from 'module'
-import path          from 'path'
-import webpack       from 'webpack'
+import assert                          from 'node:assert/strict'
+import { mkdtemp }                     from 'node:fs/promises'
+import { rm }                          from 'node:fs/promises'
+import { tmpdir }                      from 'node:os'
+import { dirname }                     from 'node:path'
+import { join }                        from 'node:path'
+import { test }                        from 'node:test'
+import { fileURLToPath }               from 'node:url'
 
-import { resolve }   from '../src'
+import webpack                         from 'webpack'
 
-describe('resolve webpack source map', () => {
-  beforeAll(async () => {
-    const compiler = webpack({
-      context: __dirname,
-      mode: 'development',
-      target: 'node',
-      devtool: 'eval-cheap-module-source-map',
-      entry: {
-        simple: path.join(__dirname, 'fixtures', 'simple.js'),
-      },
-      output: {
-        libraryTarget: 'commonjs',
-        path: path.join(__dirname, 'fixtures', 'dist'),
-      },
-    })
+import { resolve as resolveSourceMap } from '../src/index.js'
 
-    // eslint-disable-next-line no-shadow
-    await new Promise((resolve, reject) => {
-      compiler.run((error) => {
-        if (error && !error.message) {
-          reject(error)
-        } else {
-          resolve(null)
-        }
-      })
+test('resolves the original source of a webpack bundle', async (context) => {
+  const directory = dirname(fileURLToPath(import.meta.url))
+  const outputDirectory = await mkdtemp(join(tmpdir(), 'webpack-source-map-'))
+
+  context.after(async () => rm(outputDirectory, { recursive: true, force: true }))
+
+  const compiler = webpack({
+    context: directory,
+    mode: 'development',
+    target: 'node',
+    devtool: 'eval-cheap-module-source-map',
+    entry: {
+      simple: join(directory, 'fixtures', 'simple.js'),
+    },
+    output: {
+      filename: '[name].cjs',
+      libraryTarget: 'commonjs',
+      path: outputDirectory,
+    },
+  })
+
+  await new Promise<void>((resolve, reject) => {
+    compiler.run((error, stats) => {
+      if (error) reject(error)
+      else if (stats?.hasErrors()) reject(new Error(stats.toString('errors-only')))
+      else resolve()
     })
   })
 
-  it('simple', () => {
-    const sourceMap = resolve(
-      'webpack-internal:///./fixtures/simple.js',
-      path.join(__dirname, 'fixtures', 'dist', 'simple.js')
-    ) as SourceMap
+  const sourceMap = resolveSourceMap(
+    'webpack-internal:///./fixtures/simple.js',
+    join(outputDirectory, 'simple.cjs')
+  )
 
-    expect(sourceMap).toBeDefined()
+  assert.ok(sourceMap)
 
-    const entry = sourceMap.findEntry(5, 0)
+  const entry = sourceMap.findEntry(5, 0)
 
-    expect(entry).toBeDefined()
-    expect(entry.originalLine).toBe(1)
-  })
+  assert.ok('originalLine' in entry)
+  assert.equal(entry.originalLine, 1)
 })
