@@ -1,56 +1,62 @@
-import path    from 'path'
-import webpack from 'webpack'
+import type { StackTrace } from '../src/stack-trace.js'
 
-describe('webpack stack trace', () => {
-  beforeAll(async () => {
-    const compiler = webpack({
-      context: __dirname,
-      mode: 'development',
-      target: 'node',
-      devtool: 'eval-cheap-module-source-map',
-      entry: {
-        simple: path.join(__dirname, 'fixtures', 'simple.js'),
-      },
-      output: {
-        libraryTarget: 'commonjs',
-        path: path.join(__dirname, 'fixtures', 'dist'),
-      },
-      resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-      },
-      module: {
-        rules: [{ test: /\.ts?$/, loader: 'ts-loader' }],
-      },
-    })
+import assert              from 'node:assert/strict'
+import { mkdtemp }         from 'node:fs/promises'
+import { rm }              from 'node:fs/promises'
+import { createRequire }   from 'node:module'
+import { tmpdir }          from 'node:os'
+import { dirname }         from 'node:path'
+import { join }            from 'node:path'
+import { test }            from 'node:test'
+import { fileURLToPath }   from 'node:url'
 
-    await new Promise((resolve, reject) => {
-      compiler.run((error) => {
-        if (error && !error.message) {
-          reject(error)
-        } else {
-          resolve(null)
-        }
-      })
+import webpack             from 'webpack'
+
+test('maps frames from a webpack bundle to their sources', async (context) => {
+  const directory = dirname(fileURLToPath(import.meta.url))
+  const outputDirectory = await mkdtemp(join(tmpdir(), 'stack-trace-webpack-'))
+
+  context.after(async () => rm(outputDirectory, { recursive: true, force: true }))
+
+  const compiler = webpack({
+    context: directory,
+    mode: 'development',
+    target: 'node',
+    devtool: 'eval-cheap-module-source-map',
+    entry: {
+      simple: join(directory, 'fixtures', 'simple.js'),
+    },
+    output: {
+      filename: '[name].cjs',
+      devtoolModuleFilenameTemplate: 'webpack-internal:///[resource-path]',
+      libraryTarget: 'commonjs',
+      path: outputDirectory,
+    },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js'],
+      extensionAlias: { '.js': ['.ts', '.tsx', '.js'] },
+    },
+    module: {
+      rules: [{ test: /\.ts?$/, loader: 'ts-loader' }],
+    },
+  })
+
+  await new Promise<void>((resolve, reject) => {
+    compiler.run((error, stats) => {
+      if (error) reject(error)
+      else if (stats?.hasErrors()) reject(new Error(stats.toString('errors-only')))
+      else resolve()
     })
   })
 
-  it('simple', () => {
-    const entryPath = path.join(__dirname, 'fixtures', 'dist', 'simple.js')
+  const requireBundle = createRequire(import.meta.url)
+  const { Target } = requireBundle(join(outputDirectory, 'simple.cjs')) as {
+    Target: { parseErrorStack: () => StackTrace }
+  }
+  const [repeatStringFrame, simpleFrame] = Target.parseErrorStack().frames
 
-    const { Target } = require(entryPath)
-
-    const stackTrace = Target.parseErrorStack()
-
-    const [repeatStringFrame, simpleFrame] = stackTrace.frames
-
-    expect(repeatStringFrame.sourceMap).toBeDefined()
-    expect(repeatStringFrame.sourceMap.payload.file).toEqual(
-      expect.stringContaining('repeat-string/index.js')
-    )
-
-    expect(simpleFrame.sourceMap).toBeDefined()
-    expect(simpleFrame.sourceMap.payload.file).toEqual(
-      expect.stringContaining('./fixtures/simple.js')
-    )
-  })
+  assert.ok(repeatStringFrame.sourceMap)
+  assert.match(repeatStringFrame.sourceMap.payload.file, /repeat-string\/index\.js/u)
+  assert.ok(simpleFrame.sourceMap)
+  assert.match(simpleFrame.sourceMap.payload.file, /\.\/fixtures\/simple\.js/u)
 })

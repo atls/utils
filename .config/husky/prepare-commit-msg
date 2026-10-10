@@ -1,4 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-yarn commit message $@
+# Raijin-managed hook
+yarn commit message "$@"

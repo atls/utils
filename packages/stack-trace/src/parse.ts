@@ -1,11 +1,16 @@
-import StackUtils       from 'stack-utils'
+import type { StackFrame } from './stack-trace.js'
 
-import { resolve }      from '@atls/webpack-source-map'
+import { fileURLToPath }   from 'node:url'
 
-import { StackTrace }   from './stack-trace'
-import { StackFrame }   from './stack-trace'
-import { isWebpackEnv } from './constants'
-import { isProdEnv }    from './constants'
+import StackUtils          from 'stack-utils'
+
+import { resolve }         from '@atls/webpack-source-map'
+
+import { StackTrace }      from './stack-trace.js'
+import { isWebpackEnv }    from './constants.js'
+import { isProdEnv }       from './constants.js'
+
+const modulePath = typeof __filename === 'string' ? __filename : fileURLToPath(import.meta.url)
 
 export const parse = (stack: string): StackTrace => {
   const lines = stack.split('\n')
@@ -13,12 +18,12 @@ export const parse = (stack: string): StackTrace => {
   const cwd = process.cwd()
   const stackUtils = new StackUtils({ cwd })
 
-  const frames = lines.reduce((result: StackFrame[], line) => {
+  const frames = lines.reduce((result: Array<StackFrame>, line) => {
     const frame: StackFrame | null = stackUtils.parseLine(line.trim())
 
     if (frame) {
       if (frame.file && isWebpackEnv && !isProdEnv) {
-        const sourceMap = resolve(frame.file, __filename)
+        const sourceMap = resolve(frame.file, modulePath)
 
         if (sourceMap) {
           frame.sourceMap = sourceMap
@@ -31,7 +36,7 @@ export const parse = (stack: string): StackTrace => {
           if (frame.line && frame.column) {
             const entry = sourceMap.findEntry(frame.line, frame.column)
 
-            if (entry) {
+            if ('originalLine' in entry && 'originalColumn' in entry) {
               frame.line = entry.originalLine
               frame.column = entry.originalColumn
             }
