@@ -1,0 +1,16 @@
+name: Pack PR control
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/verify-pack-images.yaml
+
+jobs:
+  verify:
+    if: github.head_ref == 'ci/verify-pack-images'
+    uses: atls/shared/.github/workflows/checks.yaml@686140860f7d20b35b4fabdd1c25f3ddeadcffe0
+    permissions:
+      contents: read
+      packages: read
+    with:
+      checksCommand: 'true'
